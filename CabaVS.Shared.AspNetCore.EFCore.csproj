@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<PackageId>CabaVS.Shared.AspNetCore.EFCore</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>CabaVS</Authors>
+		<Company>CabaVS</Company>
+		<PackageDescription>Extensions for the EF Core functionality within ASP.NET Core applications.</PackageDescription>
+		<RepositoryUrl>https://dev.azure.com/valeriisavchenko/CabaVS%20system/_git/shared-aspnetcore-efcore</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.8" />
+	</ItemGroup>
+
+</Project>
