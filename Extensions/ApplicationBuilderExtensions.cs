@@ -25,24 +25,24 @@ namespace CabaVS.Shared.AspNetCore.EFCore.Extensions
                 throw new ApplicationException("Unable to run migrations. Chosen DbContext is not available from Service Provider.");
             }
 
-            if (createDbIfNotExists)
+            if (!context.Database.CanConnect())
             {
-                if (connectionString == null) throw new ArgumentNullException(nameof(connectionString));
+                if (createDbIfNotExists)
+                {
+                    if (connectionString == null) throw new ArgumentNullException(nameof(connectionString));
 
-                var masterConnString = ReplaceDatabaseInConnString(connectionString, "master", out var originalDatabase);
-                
-                using var sqlConnection = new SqlConnection(masterConnString);
-                sqlConnection.Open();
+                    var masterConnString = ReplaceDatabaseInConnString(connectionString, "master", out var originalDatabase);
 
-                using var sqlCommand = sqlConnection.CreateCommand();
-                sqlCommand.CommandText = $"CREATE DATABASE [{originalDatabase}]";
-                sqlCommand.ExecuteNonQuery();
+                    using var sqlConnection = new SqlConnection(masterConnString);
+                    sqlConnection.Open();
 
-                sqlConnection.Close();
-            }
-            else
-            {
-                if (!context.Database.CanConnect())
+                    using var sqlCommand = sqlConnection.CreateCommand();
+                    sqlCommand.CommandText = $"CREATE DATABASE [{originalDatabase}]";
+                    sqlCommand.ExecuteNonQuery();
+
+                    sqlConnection.Close();
+                }
+                else
                 {
                     throw new ApplicationException("Unable to run migrations. Database is not available.");
                 }
