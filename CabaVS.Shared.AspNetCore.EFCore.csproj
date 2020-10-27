@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<PackageId>CabaVS.Shared.AspNetCore.EFCore</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.1.0</Version>
 		<Authors>CabaVS</Authors>
 		<Company>CabaVS</Company>
 		<PackageDescription>Extensions for the EF Core functionality within ASP.NET Core applications.</PackageDescription>

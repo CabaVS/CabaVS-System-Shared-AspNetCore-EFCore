@@ -7,7 +7,7 @@ namespace CabaVS.Shared.AspNetCore.EFCore.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
-        public static void RunMigrations<TContext>(this IApplicationBuilder app) where TContext : DbContext
+        public static void RunMigrations<TContext>(this IApplicationBuilder app, bool checkDatabase = true) where TContext : DbContext
         {
             if (app == null) throw new ArgumentNullException(nameof(app));
 
@@ -21,7 +21,7 @@ namespace CabaVS.Shared.AspNetCore.EFCore.Extensions
                 throw new ApplicationException("Unable to run migrations. Chosen DbContext is not available from Service Provider.");
             }
 
-            if (!context.Database.CanConnect())
+            if (checkDatabase && !context.Database.CanConnect())
             {
                 throw new ApplicationException("Unable to run migrations. Database is not available.");
             }
