@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<PackageId>CabaVS.Shared.AspNetCore.EFCore</PackageId>
-		<Version>1.1.0</Version>
+		<Version>1.2.0</Version>
 		<Authors>CabaVS</Authors>
 		<Company>CabaVS</Company>
 		<PackageDescription>Extensions for the EF Core functionality within ASP.NET Core applications.</PackageDescription>
@@ -14,6 +14,7 @@
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.8" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
 	</ItemGroup>
 
 </Project>
