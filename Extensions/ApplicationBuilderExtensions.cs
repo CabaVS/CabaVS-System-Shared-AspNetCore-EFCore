@@ -9,7 +9,7 @@ namespace CabaVS.Shared.AspNetCore.EFCore.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
-        private const string DatabaseNamePattern = ".+Database=(.*);.+";
+        private const string DatabaseNamePattern = ".+Database=(.*?);.+";
 
         public static void RunMigrations<TContext>(this IApplicationBuilder app, bool createDbIfNotExists = false, string connectionString = null) where TContext : DbContext
         {

@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<PackageId>CabaVS.Shared.AspNetCore.EFCore</PackageId>
-		<Version>1.2.0</Version>
+		<Version>1.2.1</Version>
 		<Authors>CabaVS</Authors>
 		<Company>CabaVS</Company>
 		<PackageDescription>Extensions for the EF Core functionality within ASP.NET Core applications.</PackageDescription>
